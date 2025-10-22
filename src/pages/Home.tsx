@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getVehicles } from "../api/vehicles";
 import type { Car } from "../types";
-import { CarForm } from "../components/CarForm";
+import { CarForm } from "../components/CarForm/CarForm";
 import { CarList } from "../components/CarList/CarList";
 import { CarMap } from "../components/CarMap";
 
@@ -24,6 +24,10 @@ export const Home = () => {
     fetchVehicles();
   }, []);
 
+  const handleAdd = (newCar: Car) => {
+    setVehicles(prev => [...prev, newCar]);
+  };
+
   const handleDelete = (id: number) => {
     setVehicles(prev => prev.filter(car => car.id !== id));
   };
@@ -33,7 +37,7 @@ export const Home = () => {
   return (
     <main>
       <h1>Управление машинами</h1>
-      <CarForm />
+      <CarForm onAdd={handleAdd} />
       <CarList cars={vehicles} onDelete={handleDelete} />
       <CarMap/>
     </main>
