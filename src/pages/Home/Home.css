@@ -4,6 +4,11 @@
   margin: 0 auto;
 }
 
+.home-title {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
 .sort-container {
   margin-bottom: 1.5rem;
   display: flex;

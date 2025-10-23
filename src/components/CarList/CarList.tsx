@@ -33,7 +33,7 @@ export const CarList: React.FC<CarListProps> = ({ cars, onDelete, onEdit }) => {
 
   return (
     <section className="car-list-section">
-      <h2>Список машин</h2>
+      <h2 className="car-list-title">Car List</h2>
       <div className="car-list">
         {cars.map(car => (
           <div key={car.id} className="car-card">

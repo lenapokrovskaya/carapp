@@ -8,13 +8,19 @@
   gap: 12px;
 }
 
+.car-list-title {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
 .car-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 12px;
+  padding: 10px;
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
