@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+# 🚗 Car Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![React](https://img.shields.io/badge/React-18.2.0-blue?logo=react&logoColor=white)](https://reactjs.org/)
+[![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-1.9.5-purple?logo=redux&logoColor=white)](https://redux-toolkit.js.org/)
+[![Leaflet](https://img.shields.io/badge/Leaflet-1.9.4-brightgreen?logo=leaflet&logoColor=white)](https://leafletjs.com/)
+[![Axios](https://img.shields.io/badge/Axios-1.5.0-blue?logo=axios&logoColor=white)](https://axios-http.com/)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-Currently, two official plugins are available:
+Современное **SPA-приложение на React** для управления машинами с использованием **Redux Toolkit**, **Axios** и интерактивных карт **Leaflet**.
+Позволяет просматривать, сортировать и редактировать машины через удобный интерфейс.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🌟 Основные возможности
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| ✨ Возможность | 📌 Описание |
+|----------------|-------------|
+| 🚘 Список машин | Просмотр всех машин в удобном списке |
+| ➕ Добавить машину | Добавление новой машины через простую форму |
+| ✏️ Редактировать машину | Обновление информации о машине |
+| 🗑 Удалить машину | Удаление машины из списка |
+| 🔀 Сортировка | Сортировка машин по различным критериям |
+| 🗺 Карта | Просмотр расположения машин на интерактивной карте |
+| ⚡ Redux Toolkit | Эффективное управление состоянием приложения |
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠 Технологии
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **React** – библиотека для фронтенда
+- **Redux Toolkit** – управление состоянием
+- **JavaScript / TypeScript**
+- **CSS / SCSS** – стилизация
+- **Axios** – для работы с API
+- **Leaflet** – интерактивные карты
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 💻 Установка и запуск
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+```bash
+# Клонировать репозиторий
+git clone https://github.com/lenapokrovskaya/carapp.git
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# Перейти в папку проекта
+cd carapp
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# Установить зависимости
+npm install
+
+# Запустить сервер разработки
+npm start
