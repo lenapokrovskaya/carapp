@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import type { Car } from "../../types";
-import "./CarList.css";
+import "./Carlist.css";
 
 interface CarListProps {
   cars: Car[];
