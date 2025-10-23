@@ -32,13 +32,20 @@ export const Home = () => {
     setVehicles(prev => prev.filter(car => car.id !== id));
   };
 
+  const handleEdit = (updatedCar: Car) => {
+  setVehicles(prev =>
+    prev.map(car => (car.id === updatedCar.id ? updatedCar : car))
+  );
+};
+
+
   if (loading) return <p>Загрузка машин...</p>;
 
   return (
     <main>
       <h1>Управление машинами</h1>
       <CarForm onAdd={handleAdd} />
-      <CarList cars={vehicles} onDelete={handleDelete} />
+      <CarList cars={vehicles} onDelete={handleDelete} onEdit={handleEdit} />
       <CarMap/>
     </main>
   );
