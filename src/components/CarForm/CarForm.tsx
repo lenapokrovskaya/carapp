@@ -23,9 +23,8 @@ export const CarForm: React.FC<CarFormProps> = ({ onAdd }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // создаём объект Car
     const newCar: Car = {
-      id: Date.now(), // временный ID (можно заменить, если сервер возвращает ID)
+      id: Date.now(),
       name: formData.name,
       model: formData.model,
       year: Number(formData.year),
@@ -35,8 +34,8 @@ export const CarForm: React.FC<CarFormProps> = ({ onAdd }) => {
       longitude: 0,
     };
 
-    onAdd(newCar); // передаём новую машину наверх
-    setFormData({ name: "", model: "", year: "", color: "", price: "" }); // очищаем форму
+    onAdd(newCar);
+    setFormData({ name: "", model: "", year: "", color: "", price: "" });
   };
 
   return (

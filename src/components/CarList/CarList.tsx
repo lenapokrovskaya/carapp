@@ -56,13 +56,17 @@ export const CarList: React.FC<CarListProps> = ({ cars, onDelete, onEdit }) => {
               </>
             ) : (
               <>
-                <h3 className="car-name">{car.name}</h3>
-                <p className="car-model">Model: {car.model}</p>
-                <p className="car-year">Year: {car.year}</p>
-                <p className="car-price">Price: ${car.price}</p>
-                <p className="car-color">Color: {car.color}</p>
-                <button onClick={() => startEdit(car)}>Edit</button>
-                <button onClick={() => onDelete(car.id)}>Delete</button>
+			    <div className="car-info-wrapper">
+					<h3 className="car-name">{car.name}</h3>
+					<p className="car-model">{car.model}</p>
+					<p className="car-year">{car.year}</p>
+					<p className="car-price">${car.price}</p>
+					<p className="car-color">{car.color}</p>
+				</div>
+				<div className="car-button-wrapper">
+					<button onClick={() => startEdit(car)}>Edit</button>
+					<button className="delete-btn" onClick={() => onDelete(car.id)}>Delete</button>
+				</div>
               </>
             )}
           </div>

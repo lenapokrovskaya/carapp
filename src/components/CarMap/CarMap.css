@@ -1,0 +1,6 @@
+.car-map-container {
+  margin-top: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}

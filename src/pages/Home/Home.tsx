@@ -3,7 +3,7 @@ import { getVehicles } from "../../api/vehicles";
 import type { Car } from "../../types";
 import { CarForm } from "../../components/CarForm/CarForm";
 import { CarList } from "../../components/CarList/CarList";
-import { CarMap } from "../../components/CarMap";
+import { CarMap } from "../../components/CarMap/CarMap";
 import "./Home.css";
 
 export const Home = () => {
@@ -53,25 +53,25 @@ export const Home = () => {
   return (
     <main className="home-main">
 	<h1>Управление машинами</h1>
-
-	<div className="sort-container">
-		<label htmlFor="sort-select">Сортировка: </label>
-		<select
-		id="sort-select"
-		value={sortOption}
-		onChange={e => setSortOption(e.target.value)}
-		>
-		<option value="">Без сортировки</option>
-		<option value="name-asc">Name ↑</option>
-		<option value="name-desc">Name ↓</option>
-		<option value="price-asc">Price ↑</option>
-		<option value="price-desc">Price ↓</option>
-		</select>
-	</div>
-
 	<CarForm onAdd={handleAdd} />
+		<div className="container">
+		<div className="sort-container">
+			<label htmlFor="sort-select">Сортировка: </label>
+			<select
+			id="sort-select"
+			value={sortOption}
+			onChange={e => setSortOption(e.target.value)}
+			>
+			<option value="">Без сортировки</option>
+			<option value="name-asc">Name ↑</option>
+			<option value="name-desc">Name ↓</option>
+			<option value="price-asc">Price ↑</option>
+			<option value="price-desc">Price ↓</option>
+			</select>
+	</div>
 	<CarList cars={sortedVehicles} onDelete={handleDelete} onEdit={handleEdit} />
-	<CarMap />
+	<CarMap cars={vehicles} />
+	</div>
   </main>
   );
 };
